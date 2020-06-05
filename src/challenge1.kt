@@ -11,7 +11,6 @@ fun main() {
 
     var keys = gradeByStudent.keys
     var vals = gradeByStudent.values
-
     var version3 = vals.zip(keys).toMap()
     println(version3)
 }
