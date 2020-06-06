@@ -7,7 +7,7 @@ class Blog {
         this.posts.add(Post(title, content, tags))
     }
 
-    fun getPostByTag(tag: String) = this.posts.filter { post -> post.tags.contains(tag) }
+    fun getPostsByTag(tag: String) = this.posts.filter { post -> post.tags.contains(tag) }
 }
 
 class Post(
