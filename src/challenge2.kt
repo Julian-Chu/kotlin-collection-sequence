@@ -4,9 +4,12 @@ val lastName = listOf("Ironfoot", "Fernsworth", "Baggins")
 
 fun main() {
 
-//    val uniquePatrons = uniquepatronsV1()
-//    val uniquePatrons = uniquepatronsV2()
-    val uniquePatrons: Set<String> = uniquePatronsV3()
+    val uniquePatrons1: Set<String> = generateSequence {
+        val first = patronList.myRandom()
+        val last = patronList.myRandom()
+        "$first $last"
+    }.distinct().take(9).toSet()
+    val uniquePatrons: Set<String> = uniquePatrons1
 
     println(uniquePatrons)
 /*---------------------------*/
@@ -31,34 +34,3 @@ private fun patronGoldV1(uniquePatrons: Set<String>): MutableMap<String, Double>
 }
 
 
-private fun uniquepatronsV1(): MutableSet<String> {
-    val uniquePatrons = mutableSetOf<String>()
-
-    (0..9).forEach {
-        val first = patronList.myRandom()
-        val last = lastName.myRandom()
-        val name = "$first $last"
-        uniquePatrons += name
-    }
-
-    return uniquePatrons
-}
-
-private fun uniquepatronsV2(): Set<String> {
-    val uniquePatrons: Set<String> = generateSequence {
-        val first = patronList.myRandom()
-        val last = patronList.myRandom()
-        "$first $last"
-    }.take(10).toSet()
-
-   return uniquePatrons
-}
-
-private fun uniquePatronsV3(): Set<String> {
-    val uniquePatrons: Set<String> = generateSequence {
-        val first = patronList.myRandom()
-        val last = patronList.myRandom()
-        "$first $last"
-    }.distinct().take(9).toSet()
-    return uniquePatrons
-}
