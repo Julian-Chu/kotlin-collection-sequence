@@ -14,4 +14,7 @@ fun main() {
     var vals = gradeByStudent.values
     var version3 = vals.zip(keys).toMap()
     println(version3)
+
+    var version4= gradeByStudent.map { (first, second) -> second to first }  // by yanbin_hung
+    println(version4)
 }
